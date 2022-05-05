@@ -1,0 +1,28 @@
+@import "../../Styles/variables";
+
+.input_container{
+  position: relative;
+  width: 50%;
+  background-color: green;
+
+  .input{
+    padding: 10px 10% 10px 26px;
+    display: flex;
+    align-items: center;
+    background-color: $input_color;
+    border: none;
+    color: $gray_color;
+    outline-offset: 0;
+    outline: 0;
+    font-size: 14px;
+    width: 100%;
+  }
+  .search_icon{
+    position: absolute;
+    top: 12%;
+    right: 4%;
+    font-size: 20px;
+    color: white;
+  }
+}
+

@@ -1,0 +1,62 @@
+@import "../../Styles/variables";
+
+.main {
+  margin: 15px 0 0 0;
+
+  .table {
+    margin: 0;
+    padding: 0;
+
+//=================================================== header
+    .table_header {
+      background-color: $main_color;
+      color: #ffffff;
+      padding: 10px 0 10px;
+      font-size: 14px;
+      display: flex;
+      text-align: center;
+      font-weight: bold;
+
+      .id, .title,.description{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .id{
+        width: 12%;
+        padding-left: 23px;
+      }
+      .title, .description{
+        width: 44%;
+      }
+    }
+//=================================================== body
+    .table_body {
+      border-top: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 13px;
+      font-weight: 500;
+
+      .id, .title,.description{
+        display: flex;
+        align-items: center;
+        border: 1px solid $gray_color;
+        border-top: none;
+      }
+      .id{
+        text-align: center;
+        width: 12%;
+        border-right: none;
+      }
+      .title{
+        border-right: none;
+        width: 44%;
+      }
+      .description{
+        width: 44%;
+      }
+    }
+  }
+}

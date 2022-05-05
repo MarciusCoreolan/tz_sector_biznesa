@@ -1,0 +1,19 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+}
+.pagination .page_button_styles {
+  margin-right: 10px;
+  cursor: pointer;
+  font-style: italic;
+}
+.pagination .page_button_styles:hover {
+  color: red;
+}
+.pagination .active_page {
+  color: #48e348;
+  background-color: #48e348;
+}
+
+/*# sourceMappingURL=pagination.css.map */
