@@ -64,7 +64,7 @@
   border-top: none;
 }
 .main .table tbody td {
-  border: 0.5px solid #B2B7BF;
+  border: 0.5px solid #b2b7bf;
   border-top: none;
 }
 
@@ -77,9 +77,9 @@
   padding: 10px 10% 10px 26px;
   display: flex;
   align-items: center;
-  background-color: #5A5C66;
+  background-color: #5a5c66;
   border: none;
-  color: #B2B7BF;
+  color: #b2b7bf;
   outline-offset: 0;
   outline: 0;
   font-size: 14px;
@@ -93,7 +93,7 @@
   color: white;
 }
 
-.loading {
+.status {
   font-size: 2vw;
   text-align: center;
   height: 100vh;

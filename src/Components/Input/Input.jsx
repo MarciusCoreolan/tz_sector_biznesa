@@ -1,9 +1,8 @@
 import React from "react";
 
 function Input({ value, placeholder = "Текст", onChange }) {
-
   return (
-    <form className={'input_container'}>
+    <form className={"input_container"}>
       <input
         type="text"
         placeholder={placeholder}
@@ -13,9 +12,11 @@ function Input({ value, placeholder = "Текст", onChange }) {
           onChange(e);
         }}
       />
-        <div className={'search_icon'}>
-            <i className="fa fa-search" aria-hidden="true"> </i>
-        </div>
+      <div className={"search_icon"}>
+        <i className="fa fa-search" aria-hidden="true">
+          {" "}
+        </i>
+      </div>
     </form>
   );
 }

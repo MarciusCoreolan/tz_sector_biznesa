@@ -1,28 +1,27 @@
-.footer{
+.footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
 
-  .pagination_numbers{
+  .pagination_numbers {
     display: flex;
   }
 
-  .page_button_styles{
+  .page_button_styles {
     margin-right: 10px;
     cursor: pointer;
     font-style: italic;
-    &:hover{
+    &:hover {
       color: red;
     }
   }
-  .active_page{
+  .active_page {
     color: #0eab0e;
   }
   button {
-    &:hover{
+    &:hover {
       color: red;
     }
   }
 }
-
