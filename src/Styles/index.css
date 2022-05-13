@@ -9,59 +9,63 @@
   font-size: inherit;
 }
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.footer .pagination_numbers {
+  display: flex;
+}
+.footer .page_button_styles {
+  margin-right: 10px;
+  cursor: pointer;
+  font-style: italic;
+}
+.footer .page_button_styles:hover {
+  color: red;
+}
+.footer .active_page {
+  color: #0eab0e;
+}
+.footer button:hover {
+  color: red;
+}
+
 .main {
   margin: 15px 0 0 0;
 }
 .main .table {
   margin: 0;
   padding: 0;
+  vertical-align: middle;
 }
-.main .table .table_header {
+.main .table * {
+  border: none;
+}
+.main .table .column_id {
+  width: 12%;
+  text-align: center;
+}
+.main .table thead {
   background-color: #474955;
-  color: #ffffff;
-  padding: 10px 0 10px;
-  font-size: 14px;
-  display: flex;
+  color: #fff;
   text-align: center;
-  font-weight: bold;
 }
-.main .table .table_header .id, .main .table .table_header .title, .main .table .table_header .description {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.main .table thead th {
+  cursor: pointer;
 }
-.main .table .table_header .id {
-  width: 12%;
-  padding-left: 23px;
+.main .table thead th:after {
+  content: url("../../Assets/arrow_down.svg");
+  margin-left: 15%;
 }
-.main .table .table_header .title, .main .table .table_header .description {
-  width: 44%;
-}
-.main .table .table_body {
-  border-top: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  font-size: 13px;
-  font-weight: 500;
-}
-.main .table .table_body .id, .main .table .table_body .title, .main .table .table_body .description {
-  display: flex;
-  align-items: center;
-  border: 1px solid #B2B7BF;
+.main .table tbody {
   border-top: none;
 }
-.main .table .table_body .id {
-  text-align: center;
-  width: 12%;
-  border-right: none;
-}
-.main .table .table_body .title {
-  border-right: none;
-  width: 44%;
-}
-.main .table .table_body .description {
-  width: 44%;
+.main .table tbody td {
+  border: 0.5px solid #B2B7BF;
+  border-top: none;
 }
 
 .input_container {
@@ -89,34 +93,10 @@
   color: white;
 }
 
-.table_cell {
-  width: 100%;
-}
-
 .loading {
   font-size: 2vw;
-  margin: 40px;
-}
-
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-.pagination .pagination_numbers {
-  display: flex;
-}
-.pagination .page_button_styles {
-  margin-right: 10px;
-  cursor: pointer;
-  font-style: italic;
-}
-.pagination .page_button_styles:hover {
-  color: red;
-}
-.pagination .active_page {
-  color: #0eab0e;
+  text-align: center;
+  height: 100vh;
 }
 
 body {

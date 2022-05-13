@@ -1,11 +1,18 @@
-import {GET_POSTS_ERROR, GET_POSTS_START, GET_POSTS_SUCCESSES, NEXT_PAGE, PREV_PAGE, SELECT_PAGE} from "./actions";
+import {
+    GET_POSTS_ERROR,
+    GET_POSTS_START,
+    GET_POSTS_SUCCESSES,
+    NEXT_PAGE,
+    PREV_PAGE,
+    SELECT_PAGE,
+} from "./actions";
 
 const initialState = {
     posts: [],
     postsPreload: false,
     totalCount: '',
     currentPage: 1,
-    error: ''
+    error: '',
 }
 
 const rootReducer = (state = initialState, action) => {

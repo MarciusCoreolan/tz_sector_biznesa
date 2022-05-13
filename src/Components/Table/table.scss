@@ -1,0 +1,40 @@
+@import "../../Styles/variables";
+
+.main {
+  margin: 15px 0 0 0;
+
+  .table {
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    * {
+      border: none;
+    }
+
+    .column_id {
+      width: 12%;
+      text-align: center;
+    }
+    //=================================================== header
+    thead {
+      background-color: $main_color;
+      color: #fff;
+      text-align: center;
+      th {
+        cursor: pointer;
+        &:after {
+          content: url("../../Assets/arrow_down.svg");
+          margin-left: 15%;
+        }
+      }
+    }
+    //=================================================== body
+    tbody {
+      border-top: none;
+      td {
+        border: 0.5px solid $gray_color;
+        border-top: none;
+      }
+    }
+  }
+}

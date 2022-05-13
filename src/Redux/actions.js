@@ -6,7 +6,6 @@ export const SELECT_PAGE = 'select/page'
 export const NEXT_PAGE = 'next/page'
 export const PREV_PAGE = 'prev/page'
 
-
 export const getPosts = (page) => {
 
     return async (dispatch) => {
@@ -14,18 +13,19 @@ export const getPosts = (page) => {
             dispatch({
                 type: GET_POSTS_START,
             });
-            const res = await fetch(BASE_URL + `?_limit=10&_page=${page}`);
-            const json = await res.json();
 
+            const res = await fetch(BASE_URL + `?_limit=10&_page=${page}`);
+
+            const json = await res.json();
             dispatch({
                 type: GET_POSTS_SUCCESSES,
                 posts: json,
                 totalCount: +res.headers.get('X-Total-Count')
             });
-        } catch (e) {
+        } catch (error) {
             dispatch({
                 type: GET_POSTS_ERROR,
-                error: "Ошибка получения данных",
+                error: 'Server not response',
             });
         }
     };

@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {getPosts} from "../Redux/actions";
 
 import Header from "./Header/Header";
-import Main from "./Main/Main";
+import Table from "./Table/Table";
 import Footer from "./Footer/Footer";
 
 function App(props) {
@@ -21,7 +21,7 @@ function App(props) {
     return (
         <div>
             <Header/>
-            <Main/>
+            <Table/>
             <Footer/>
         </div>
     );
