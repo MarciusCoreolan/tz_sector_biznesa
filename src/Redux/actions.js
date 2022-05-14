@@ -8,6 +8,7 @@ export const PREV_PAGE = "prev/page";
 export const SEARCH_ON_TABLE = "search/on/table";
 
 export const getPosts = (page) => {
+  console.log(page)
   return async (dispatch) => {
     try {
       dispatch({
@@ -17,6 +18,9 @@ export const getPosts = (page) => {
       const res = await fetch(BASE_URL + `?_limit=10&_page=${page}`);
 
       const json = await res.json();
+
+      console.log(json)
+
       dispatch({
         type: GET_POSTS_SUCCESSES,
         posts: json,

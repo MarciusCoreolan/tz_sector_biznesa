@@ -1,11 +1,12 @@
 export function useCreatePages(pages, postsLength, currentPage) {
+
   if (currentPage <= 3) {
     for (let i = 1; i <= 5; i++) {
       pages.push(i);
     }
   } else if (
-    currentPage >= Math.round(pages.length / 2) &&
-    currentPage < postsLength - 1
+      currentPage >= Math.round(pages.length / 2) &&
+      currentPage < postsLength - 1
   ) {
     for (let i = currentPage - 2; i <= currentPage + 2; i++) {
       pages.push(i);

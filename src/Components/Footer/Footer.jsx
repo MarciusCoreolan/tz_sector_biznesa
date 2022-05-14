@@ -1,31 +1,31 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-
-import { NEXT_PAGE, PREV_PAGE, SELECT_PAGE } from "../../Redux/actions";
+import {useSelector } from "react-redux";
 
 import { useCreatePages } from "../../Hooks/useCreatePages";
 import Button from "../Button/Button";
+import {useLocation, useNavigate} from "react-router-dom";
 
 function Footer(props) {
-  const dispatch = useDispatch();
-  const currentPage = useSelector((state) => state.currentPage);
+  const navigate = useNavigate()
+  const local = useLocation().pathname[1]
   const posts = useSelector((state) => state.posts.length);
 
   const pages = [];
-  useCreatePages(pages, posts, currentPage);
+  useCreatePages(pages, posts, +local);
 
-  const handleSelect = (page) => {
-    dispatch({ type: SELECT_PAGE, page: page });
+  const handleSelect = (currentPage) => {
+    navigate(`/${+currentPage}`)
   };
 
   const handleNext = () => {
-    if (currentPage < posts) {
-      dispatch({ type: NEXT_PAGE });
+    if (local < posts) {
+      navigate(`/${+local + 1}`)
     }
   };
+
   const handlePrev = () => {
-    if (currentPage > 1) {
-      dispatch({ type: PREV_PAGE });
+    if (local > 1) {
+      navigate(`/${+local - 1}`)
     }
   };
 
@@ -39,7 +39,7 @@ function Footer(props) {
             onClick={() => handleSelect(page)}
             key={page}
             className={`page_button_styles ${
-              page === +currentPage && "active_page"
+              page === +local && "active_page"
             }`}
           >
             {page}

@@ -15,7 +15,7 @@ function Table(props) {
 
   const columns = [
     {
-      dataField: "id",
+      dataField: "userId",
       text: "Id",
       sort: true,
       classes: "column_id",

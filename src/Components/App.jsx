@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import "../Styles/index.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,19 +9,23 @@ import { getPosts } from "../Redux/actions";
 import Header from "./Header/Header";
 import Table from "./Table/Table";
 import Footer from "./Footer/Footer";
+import {Navigate, Route, Routes, useLocation} from "react-router-dom";
 
 function App(props) {
   const dispatch = useDispatch();
-  const currentPage = useSelector((state) => state.currentPage);
+  const local = useLocation().pathname[1]
 
   useEffect(() => {
-    dispatch(getPosts(currentPage));
-  }, [dispatch, currentPage]);
+    dispatch(getPosts(local));
+  }, [dispatch, local]);
 
   return (
     <div>
       <Header />
-      <Table />
+        <Routes>
+            <Route path={`/${local}`} element={<Table />}/>
+            <Route path={"*"} element={<Navigate to={"/1"} replace />} />
+        </Routes>
       <Footer />
     </div>
   );
