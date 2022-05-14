@@ -22,3 +22,6 @@ function Input({ value, placeholder = "Текст", onChange }) {
 }
 
 export default Input;
+
+
+//переиспользуемые компоненты перемести в отдельную папку для переиспользуемых компонентов к примеру ui

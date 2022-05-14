@@ -1,13 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Status from "../Status/Status";
+import Status from "../Status"; //если возвращаемый файл из папки у тебя только один и у него название папки тоже самое как и файла, то файл называй index, тогда импорт сократится с import Status from "../Status/Status" на который щас есть
 import BootstrapTable from "react-bootstrap-table-next";
+import { selectPosts, selectError, selectSearch, selectPostsPreload } from "../../Redux";
 
-function Table(props) {
-  const posts = useSelector((state) => state.posts);
-  const preloader = useSelector((state) => state.postsPreload);
-  const error = useSelector((state) => state.error);
-  const search = useSelector((state) => state.search);
+function Table() {
+  const posts = useSelector(selectPosts);
+  const preloader = useSelector(selectPostsPreload);
+  const error = useSelector(selectError);
+  const search = useSelector(selectSearch); //импорты так делать выгоднее и читабельнее
 
   const filter = posts.filter((item) => {
     return item.body.toUpperCase().indexOf(search.toUpperCase()) > -1;
