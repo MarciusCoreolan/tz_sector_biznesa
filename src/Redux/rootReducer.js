@@ -45,3 +45,10 @@ const rootReducer = (state = initialState, action) => {
 };
 
 export default rootReducer;
+
+
+export const selectPosts = (state) => state.posts;
+export const selectPostsPreload = (state) => state.postsPreload;
+export const selectTotalCount = (state) => state.totalCount;
+export const selectError = (state) => state.error;
+export const selectSearch = (state) => state.search;

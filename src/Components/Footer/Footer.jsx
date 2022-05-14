@@ -1,13 +1,13 @@
 import React from "react";
 import {useSelector } from "react-redux";
 
-import { useCreatePages } from "../../Hooks/useCreatePages";
 import Button from "../Button/Button";
-import {useLocation, useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom"; //те импорты которые делаются из библиотек они выше в приоритете чем остальные, 
+import { useCreatePages } from "../../Hooks";              //подключи еслинт и найстрой его он будет тебе подсказывать, также будет плюсом
 
-function Footer(props) {
-  const navigate = useNavigate()
-  const local = useLocation().pathname[1]
+function Footer() {
+  const navigate = useNavigate();
+  const local = useLocation().pathname[1];
   const posts = useSelector((state) => state.posts.length);
 
   const pages = [];
@@ -29,13 +29,13 @@ function Footer(props) {
     }
   };
 
-  return (
-    <div className={"footer"}>
+  return ( //везде где пишешь классы оборачиваешь в {} скобки нет смысла если и так и так ты пишешь в кавычках
+    <div className={"footer"}> 
       <Button text={"Назад"} onClick={handlePrev} />
 
       <div className={"pagination_numbers"}>
         {pages.map((page) => (
-          <div
+          <div //это все-таки кнопки и я бы стал использовать button, к диву применять onClick, не по феншую, как по мне
             onClick={() => handleSelect(page)}
             key={page}
             className={`page_button_styles ${
