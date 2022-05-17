@@ -1,0 +1,13 @@
+.header {
+  .div1 {
+    height: 100px;
+    width: 100px;
+    background-color: #0eab0e;
+    margin: 10px;
+  }
+  .header_container {
+    .div1 {
+      background-color: red;
+    }
+  }
+}

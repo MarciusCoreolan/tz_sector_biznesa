@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../Styles/index.scss";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../Styles/index.scss';
 
-import { getPosts } from "../Redux/actions";
-import Header from "./Header/Header";
-import Table from "./Table/Table";
-import Footer from "./Footer/Footer";
+import { getPosts } from '../Redux/actions';
+import Header from './Header/Index';
+import Table from './Table/Index';
+import Footer from './Footer/Index';
 
 function App() {
   const dispatch = useDispatch();
@@ -16,6 +16,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getPosts(local));
+    window.scrollTo({ top: 0 });
   }, [dispatch, local]);
 
   return (
@@ -23,7 +24,7 @@ function App() {
       <Header />
       <Routes>
         <Route path={`/${local}`} element={<Table />} />
-        <Route path={"*"} element={<Navigate to={"/1"} replace />} />
+        <Route path={'*'} element={<Navigate to={'/1'} replace />} />
       </Routes>
       <Footer />
     </div>

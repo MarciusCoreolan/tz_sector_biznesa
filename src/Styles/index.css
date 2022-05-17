@@ -1,4 +1,4 @@
-@import "../../node_modules/normalize.css/normalize.css";
+@import '../../node_modules/normalize.css/normalize.css';
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,700&display=swap");
 .globalStyle {
   padding: 5px 10px;
@@ -7,6 +7,16 @@
   font-weight: 500;
   color: inherit;
   font-size: inherit;
+}
+
+.header .div1 {
+  height: 100px;
+  width: 100px;
+  background-color: #0eab0e;
+  margin: 10px;
+}
+.header .header_container .div1 {
+  background-color: red;
 }
 
 .footer {
@@ -20,11 +30,9 @@
 }
 .footer .page_button_styles {
   margin-right: 10px;
-  cursor: pointer;
+  padding: 5px;
   font-style: italic;
-}
-.footer .page_button_styles:hover {
-  color: red;
+  font-weight: 400;
 }
 .footer .active_page {
   color: #0eab0e;

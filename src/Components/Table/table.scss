@@ -1,4 +1,4 @@
-@import "../../Styles/variables";
+@import '../../Styles/variables';
 
 .main {
   margin: 15px 0 0 0;
@@ -23,7 +23,7 @@
       th {
         cursor: pointer;
         &:after {
-          content: url("../../Assets/arrow_down.svg");
+          content: url('../../Assets/arrow_down.svg');
           margin-left: 15%;
         }
       }

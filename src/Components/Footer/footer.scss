@@ -10,11 +10,9 @@
 
   .page_button_styles {
     margin-right: 10px;
-    cursor: pointer;
+    padding: 5px;
     font-style: italic;
-    &:hover {
-      color: red;
-    }
+    font-weight: 400;
   }
   .active_page {
     color: #0eab0e;

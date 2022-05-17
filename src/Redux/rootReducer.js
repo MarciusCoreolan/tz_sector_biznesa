@@ -1,15 +1,9 @@
-import {
-  GET_POSTS_ERROR,
-  GET_POSTS_START,
-  GET_POSTS_SUCCESSES,
-  SEARCH_ON_TABLE,
-} from "./actions";
+import { GET_POSTS_ERROR, GET_POSTS_START, GET_POSTS_SUCCESSES, SEARCH_ON_TABLE } from './actions';
 
 const initialState = {
   posts: [],
   postsPreload: false,
-  totalCount: "",
-  search: "",
+  search: '',
   error: null,
 };
 
@@ -45,3 +39,8 @@ const rootReducer = (state = initialState, action) => {
 };
 
 export default rootReducer;
+
+export const selectPosts = (state) => state.posts;
+export const selectPostsPreload = (state) => state.postsPreload;
+export const selectError = (state) => state.error;
+export const selectSearch = (state) => state.search;

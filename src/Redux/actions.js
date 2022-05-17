@@ -1,8 +1,8 @@
-const BASE_URL = "https://jsonplaceholder.typicode.com/posts";
-export const GET_POSTS_START = "get/posts/start";
-export const GET_POSTS_SUCCESSES = "get/posts/successes";
-export const GET_POSTS_ERROR = "get/posts/error";
-export const SEARCH_ON_TABLE = "search/on/table";
+const BASE_URL = 'https://jsonplaceholder.typicode.com/posts';
+export const GET_POSTS_START = 'get/posts/start';
+export const GET_POSTS_SUCCESSES = 'get/posts/successes';
+export const GET_POSTS_ERROR = 'get/posts/error';
+export const SEARCH_ON_TABLE = 'search/on/table';
 
 export const getPosts = (page) => {
   return async (dispatch) => {
@@ -16,13 +16,19 @@ export const getPosts = (page) => {
       dispatch({
         type: GET_POSTS_SUCCESSES,
         posts: json,
-        totalCount: +res.headers.get("X-Total-Count"),
       });
     } catch (error) {
       dispatch({
         type: GET_POSTS_ERROR,
-        error: "Server not response",
+        error: 'Server not response',
       });
     }
   };
+};
+
+export const searching = (text) => (dispatch) => {
+  return dispatch({
+    type: SEARCH_ON_TABLE,
+    text: text,
+  });
 };
